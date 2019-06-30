@@ -153,13 +153,6 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " autocomplete
-"if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-"endif
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -170,17 +163,18 @@ endif
 
 " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
 " Plug 'SirVer/ultisnips' disable as this seems buggy
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'myitcv/govim'
 
 Plug 'posva/vim-vue'
 
@@ -238,39 +232,39 @@ augroup go
   " autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
   " :GoTest
-  autocmd FileType go nmap <leader>t  <Plug>(go-test)
+  "autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
-  " :GoRun
-  autocmd FileType go nmap <leader>r  <Plug>(go-run)
+  "" :GoRun
+  "autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
-  " :GoRename
-  autocmd FileType go nmap <leader>re  <Plug>(go-rename)
+  "" :GoRename
+  "autocmd FileType go nmap <leader>re  <Plug>(go-rename)
 
-  " :GoAddTags
-  autocmd FileType go nmap <leader>tag  :GoAddTags 
+  "" :GoAddTags
+  "autocmd FileType go nmap <leader>tag  :GoAddTags 
 
-  " :GoDoc
-  autocmd FileType go nmap <Leader>doc <Plug>(go-doc)
+  "" :GoDoc
+  "autocmd FileType go nmap <Leader>doc <Plug>(go-doc)
 
-  " :GoCoverageToggle
-  autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
+  "" :GoCoverageToggle
+  "autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
 
-  " :GoInfo
-  autocmd FileType go nmap <Leader>info <Plug>(go-info)
+  "" :GoInfo
+  "autocmd FileType go nmap <Leader>info <Plug>(go-info)
 
-  " :GoMetaLinter
-  autocmd FileType go nmap <Leader>lint <Plug>(go-metalinter)
+  "" :GoMetaLinter
+  "autocmd FileType go nmap <Leader>lint <Plug>(go-metalinter)
 
-  " :GoDef but opens in a vertical split
-  autocmd FileType go nmap <Leader>defv <Plug>(go-def-vertical)
-  " :GoDef but opens in a horizontal split
-  autocmd FileType go nmap <Leader>def <Plug>(go-def-split)
+  "" :GoDef but opens in a vertical split
+  "autocmd FileType go nmap <Leader>defv <Plug>(go-def-vertical)
+  "" :GoDef but opens in a horizontal split
+  "autocmd FileType go nmap <Leader>def <Plug>(go-def-split)
 
-  " :GoAlternate  commands :A, :AV, :AS and :AT
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  "" :GoAlternate  commands :A, :AV, :AS and :AT
+  "autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  "autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  "autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  "autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
 
@@ -305,6 +299,8 @@ colorscheme molokai
 "let g:rehash256 = 1
 
 let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 set encoding=utf-8
 "set t_Co=256
 "set fillchars+=stl:\ ,stlnc:\
@@ -312,17 +308,15 @@ set encoding=utf-8
 "set termencoding=utf-8
 
 let g:deoplete#enable_at_startup = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:go_def_mode = "gopls"
-let g:go_fmt_command = "goimports"
-let g:go_info_mode = "guru"
-let g:go_auto_type_info = "gopls"
+" let g:go_def_mode = "gopls"
+" let g:go_fmt_command = "goimports"
+" let g:go_info_mode = "guru"
+" let g:go_auto_type_info = "gopls"
 
 
 " https://github.com/Shougo/deoplete.nvim/issues/965
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['~/devel/go/bin/gopls'],
-    \ }
+" let g:LanguageClient_serverCommands = {
+"     \ 'go': ['~/devel/go/bin/gopls'],
+"     \ }
