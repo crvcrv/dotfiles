@@ -151,7 +151,7 @@ Plug 'vvvvv/molokai'
 " utils
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'christoomey/vim-tmux-navigator'
 " autocomplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -163,18 +163,18 @@ endif
 
 " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
 " Plug 'SirVer/ultisnips' disable as this seems buggy
 
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'myitcv/govim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'myitcv/govim'
 
 Plug 'posva/vim-vue'
 
@@ -301,22 +301,22 @@ colorscheme molokai
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-set encoding=utf-8
-"set t_Co=256
+"set encoding=utf-8
+set t_Co=256
 "set fillchars+=stl:\ ,stlnc:\
-"set term=xterm-256color
+set term=xterm-256color
 "set termencoding=utf-8
 
 let g:deoplete#enable_at_startup = 1
-" let g:go_def_mode = "gopls"
-" let g:go_fmt_command = "goimports"
-" let g:go_info_mode = "guru"
-" let g:go_auto_type_info = "gopls"
+let g:go_def_mode = "gopls"
+let g:go_fmt_command = "goimports"
+let g:go_info_mode = "guru"
+let g:go_auto_type_info = "gopls"
 
 
 " https://github.com/Shougo/deoplete.nvim/issues/965
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
-" let g:LanguageClient_serverCommands = {
-"     \ 'go': ['~/devel/go/bin/gopls'],
-"     \ }
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['~/devel/go/bin/gopls'],
+    \ }
