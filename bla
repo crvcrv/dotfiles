@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+FSWATCH=$(which fswatch)
+DIR=/Users/v
+
+echo "$PATH"
+
+$FSWATCH -0 -o -e ".*" -i "\\.zshrc$" -i "\\.vimrc$" ${DIR} | xargs -0 -n1 -I{} dotfiles-commit >> /dev/null
+
+
+
