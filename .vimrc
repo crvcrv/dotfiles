@@ -234,37 +234,37 @@ augroup go
   " :GoTest
   "autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
-  "" :GoRun
+  " :GoRun
   "autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
-  "" :GoRename
-  "autocmd FileType go nmap <leader>re  <Plug>(go-rename)
+  " :GoRename
+  autocmd FileType go nmap <leader>re  <Plug>(go-rename)
 
-  "" :GoAddTags
-  "autocmd FileType go nmap <leader>tag  :GoAddTags 
+  " :GoAddTags
+  autocmd FileType go nmap <leader>tag  :GoAddTags 
 
-  "" :GoDoc
-  "autocmd FileType go nmap <Leader>doc <Plug>(go-doc)
+  " :GoDoc
+  autocmd FileType go nmap <Leader>doc <Plug>(go-doc)
 
-  "" :GoCoverageToggle
-  "autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
+  " :GoCoverageToggle
+  autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
 
-  "" :GoInfo
-  "autocmd FileType go nmap <Leader>info <Plug>(go-info)
+  " :GoInfo
+  autocmd FileType go nmap <Leader>info <Plug>(go-info)
 
-  "" :GoMetaLinter
-  "autocmd FileType go nmap <Leader>lint <Plug>(go-metalinter)
+  " :GoMetaLinter
+  autocmd FileType go nmap <Leader>lint <Plug>(go-metalinter)
 
-  "" :GoDef but opens in a vertical split
-  "autocmd FileType go nmap <Leader>defv <Plug>(go-def-vertical)
-  "" :GoDef but opens in a horizontal split
-  "autocmd FileType go nmap <Leader>def <Plug>(go-def-split)
+  " :GoDef but opens in a vertical split
+  autocmd FileType go nmap <Leader>defv <Plug>(go-def-vertical)
+  " :GoDef but opens in a horizontal split
+  autocmd FileType go nmap <Leader>def <Plug>(go-def-split)
 
-  "" :GoAlternate  commands :A, :AV, :AS and :AT
-  "autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  "autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  "autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-  "autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  " :GoAlternate  commands :A, :AV, :AS and :AT
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
 
