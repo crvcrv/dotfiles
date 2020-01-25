@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow common-aliases compleat docker pip pyenv python sudo wd osx tmux z)
+plugins=(git git-flow common-aliases compleat docker pip pyenv python sudo wd osx tmux z fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,8 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 export GOPATH="/Users/v/devel/go"
 export GOROOT=/usr/local/opt/go/libexec
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib64/qt/bin:/usr/share/texmf/bin:$GOPATH/bin:/usr/sbin:/sbin:/Users/v/devel/bin"
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib64/qt/bin:/usr/share/texmf/bin:$GOPATH/bin:/usr/sbin:/sbin:/Users/v/devel/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:$GOPATH/bin:/usr/sbin:/sbin:$HOME/devel/bin:$HOME/.cargo/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+#PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
